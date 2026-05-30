@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://arquetipo.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://arquetipo.com/believe.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arquetipo.com/build.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arquetipo.com/portfolio.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://arquetipo.com/who.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://arquetipo.com/news.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://arquetipo.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arquetipo.com/join.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://arquetipo.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>

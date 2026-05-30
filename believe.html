@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arquetipo — Qué creemos</title>
+  <meta name="description" content="Misión, visión y valores. Europa ha estado dormida. Arquetipo construye lo que Europa debe poseer para seguir siendo soberana." />
+  <meta name="description" lang="en" content="Mission, vision and values. Europe has been asleep. Arquetipo builds what Europe must own to stay sovereign." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Arquetipo Studio SL" />
+  <meta name="theme-color" content="#14181C" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline'; img-src 'self' https: data: blob:; media-src 'self' https: data: blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'" />
+  <link rel="canonical" href="https://arquetipo.com/believe.html" />
+  <link rel="alternate" hreflang="es" href="https://arquetipo.com/believe.html" />
+  <link rel="alternate" hreflang="en" href="https://arquetipo.com/believe.html" />
+  <link rel="alternate" hreflang="de" href="https://arquetipo.com/believe.html" />
+  <link rel="alternate" hreflang="x-default" href="https://arquetipo.com/believe.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Arquetipo" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:title" content="Arquetipo — What We Believe" />
+  <meta property="og:description" content="Mission, vision and values. Europe has been asleep. Arquetipo builds what Europe must own to stay sovereign." />
+  <meta property="og:url" content="https://arquetipo.com/believe.html" />
+  <meta property="og:image" content="https://arquetipo.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arquetipo — What We Believe" />
+  <meta name="twitter:description" content="Mission, vision and values. Europe has been asleep. Arquetipo builds what Europe must own to stay sovereign." />
+  <meta name="twitter:image" content="https://arquetipo.com/og-image.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <!-- @seo-block -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="arquetipo.css" />
+<style>
+  /* ===== Alt — subtle editorial treatment ===== */
+  /* index rail shared by mission / vision / values */
+  .wb{border-top:1px solid var(--line);padding:clamp(60px,8vw,116px) 0;}
+  .wb__inner{display:grid;grid-template-columns:104px 1fr;gap:clamp(24px,5vw,72px);align-items:start;}
+  @media(max-width:760px){.wb__inner{grid-template-columns:1fr;gap:18px;}}
+  .wb__idx{position:sticky;top:96px;}
+  .wb__rn{font-family:var(--display);font-weight:500;font-size:22px;letter-spacing:0;color:var(--ink);margin:0 0 6px;}
+  .wb__idxlabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0;}
+  @media(max-width:760px){.wb__idx{position:static;display:flex;align-items:baseline;gap:12px;}.wb__rn{margin:0;}}
+  .wb__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--serene-strong);margin:0 0 clamp(18px,2.2vw,26px);}
+  .wb__statement{font-family:var(--display);font-weight:500;font-size:clamp(26px,3.1vw,44px);line-height:1.14;letter-spacing:-.02em;color:var(--ink);margin:0;max-width:20ch;text-wrap:balance;}
+  .wb__rule{width:56px;height:1px;background:var(--serene-strong);margin:clamp(28px,3.4vw,44px) 0 0;}
+
+  /* the three Missions — quiet hairline rows */
+  .wb--missions{background:var(--alt);}
+  .wb-missions{display:grid;grid-template-columns:1fr;gap:0;margin-top:8px;border-top:1px solid var(--line);}
+  .wb-mission{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:clamp(18px,3vw,52px);padding:clamp(22px,2.8vw,36px) 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  @media(max-width:640px){.wb-mission{grid-template-columns:1fr;gap:8px;}}
+  .wb-mission__name{font-family:var(--display);font-weight:500;font-size:clamp(21px,2.1vw,27px);letter-spacing:-.015em;color:var(--ink);margin:0;}
+  .wb-mission__tag{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--slate);margin:6px 0 0;}
+  .wb-mission__brief{font-size:15.5px;line-height:1.62;color:var(--muted);margin:0;max-width:52ch;}
+
+  /* values — restrained 2x2 */
+  .wb-vhead{font-family:var(--display);font-weight:500;font-size:clamp(24px,3vw,38px);line-height:1.08;letter-spacing:-.018em;color:var(--ink);margin:0 0 6px;max-width:18ch;}
+  .wb-vsub{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--faint);margin:0 0 clamp(32px,4vw,48px);}
+  .wb-vgrid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  @media(max-width:640px){.wb-vgrid{grid-template-columns:1fr;}}
+  .wb-vcell{position:relative;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(24px,3vw,40px);}
+  .wb-vcell__top{display:flex;align-items:baseline;gap:14px;margin:0 0 14px;}
+  .wb-vcell__num{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--serene-strong);}
+  .wb-vcell__name{font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,24px);line-height:1.12;letter-spacing:-.012em;color:var(--ink);margin:0;}
+  .wb-vcell__body{font-size:15px;line-height:1.62;color:var(--muted);margin:0;max-width:42ch;}
+  .alt-tag{position:fixed;left:14px;bottom:14px;z-index:60;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--serene);padding:7px 12px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="home.html" class="brand">ARQUETIPO</a>
+    <div class="nav-links">
+      <a href="believe.html" class="active" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+      <a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+      <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+    </div>
+    <div class="nav-right">
+      <a href="portfolio.html" class="nav-news" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+      <a href="news.html" class="nav-news" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+      <a href="contact.html" class="nav-cta" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      <a href="join.html" class="nav-join" data-en="Join us" data-es="Únete" data-de="Mitmachen">Únete</a>
+      <button class="nav-toggle" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" data-open="false">
+  <div class="nav-overlay-top"><span class="brand">ARQUETIPO</span><button class="nav-toggle" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="1.5"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button></div>
+  <ul>
+    <li><a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a></li>
+    <li><a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a></li>
+    <li><a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="news.html" class="btn-link" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+    <a href="portfolio.html" class="btn-link" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+    <div class="lang"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div>
+    <a href="contact.html" class="btn-link" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+  </div>
+</div>
+
+<main>
+<div class="manifesto-stage" aria-hidden="true">
+  <div class="manifesto-stage__img" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=2000&amp;q=72&amp;sat=-100')"></div>
+  <div class="manifesto-stage__veil"></div>
+</div>
+<!-- MANIFESTO — opener -->
+<section class="sec sec--ink manifesto-lead">
+  <div class="wrap-tight">
+    <p class="manifesto-kicker" data-en="Manifesto" data-es="Manifiesto">Manifiesto</p>
+    <h1 class="manifesto-title" data-en="Europe has been asleep." data-es="Europa ha estado dormida.">Europa ha estado dormida.</h1>
+    <div class="manifesto-body">
+      <p class="manifesto-p" data-en="For three generations we trusted that the world we built — democratic, prosperous, plural — would defend itself. We outsourced our security, our compute, our chips, our launchers, our software stacks. We mistook comfort for progress and softness for sophistication." data-es="Durante tres generaciones confiamos en que el mundo que construimos — democrático, próspero, plural — se defendería solo. Externalizamos nuestra seguridad, nuestro cómputo, nuestros chips, nuestros lanzadores, nuestros stacks de software. Confundimos comodidad con progreso y blandura con sofisticación.">Durante tres generaciones confiamos en que el mundo que construimos — democrático, próspero, plural — se defendería solo. Externalizamos nuestra seguridad, nuestro cómputo, nuestros chips, nuestros lanzadores, nuestros stacks de software. Confundimos comodidad con progreso y blandura con sofisticación.</p>
+      <p class="manifesto-p is-beat" data-en="That world is gone." data-es="Ese mundo ya no existe.">Ese mundo ya no existe.</p>
+      <p class="manifesto-p" data-en="We now live in one where the technologies our freedom depends on are owned by others — where decisions made in Washington, Beijing, or Moscow shape whether our hospitals function, our satellites fly, our defense holds. The next decade will not be decided by who writes the rules. It will be decided by who builds the capabilities the rules apply to." data-es="Vivimos ahora en uno donde las tecnologías de las que depende nuestra libertad son propiedad de otros — donde las decisiones tomadas en Washington, Pekín o Moscú determinan si nuestros hospitales funcionan, si nuestros satélites vuelan, si nuestra Defensa aguanta. La próxima década no la decidirá quién escriba las reglas. La decidirá quién construya las capacidades sobre las que se aplican.">Vivimos ahora en uno donde las tecnologías de las que depende nuestra libertad son propiedad de otros — donde las decisiones tomadas en Washington, Pekín o Moscú determinan si nuestros hospitales funcionan, si nuestros satélites vuelan, si nuestra Defensa aguanta. La próxima década no la decidirá quién escriba las reglas. La decidirá quién construya las capacidades sobre las que se aplican.</p>
+      <p class="manifesto-p is-beat" data-en="Arquetipo exists because that cannot stand." data-es="Arquetipo existe porque eso no puede sostenerse.">Arquetipo existe porque eso no puede sostenerse.</p>
+      <p class="manifesto-p" data-en="We are not anti-American, anti-Asian, or anti-anyone. We are pro-Europe. Pro-democracy. Pro-the world our parents built and the one we owe our children." data-es="No somos antiamericanos, antiasiáticos, ni anti-nada. Somos pro-Europa. Pro-democracia. Pro-el mundo que construyeron nuestros padres y el que debemos a nuestros hijos.">No somos antiamericanos, antiasiáticos, ni anti-nada. Somos pro-Europa. Pro-democracia. Pro-el mundo que construyeron nuestros padres y el que debemos a nuestros hijos.</p>
+      <p class="manifesto-p" data-en="We build what Europe must own — the technologies that defend our sovereignty, the companies that anchor our industrial base, the talent that stays here because the mission is here." data-es="Construimos lo que Europa debe poseer — las tecnologías que defienden nuestra soberanía, las empresas que anclan nuestra base industrial, el talento que se queda aquí porque la misión está aquí.">Construimos lo que Europa debe poseer — las tecnologías que defienden nuestra soberanía, las empresas que anclan nuestra base industrial, el talento que se queda aquí porque la misión está aquí.</p>
+      <p class="manifesto-p" data-en="We work with allies. We do not depend on them." data-es="Trabajamos con aliados. No dependemos de ellos.">Trabajamos con aliados. No dependemos de ellos.</p>
+      <p class="manifesto-p" data-en="This is a long game. It will outlive any one venture, any one round, any one cycle. We are building for the Europe of 2050, not the funding deck of 2026." data-es="Esto es un juego largo. Sobrevivirá a cualquier venture, a cualquier ronda, a cualquier ciclo. Construimos para la Europa de 2050, no para el deck de 2026.">Esto es un juego largo. Sobrevivirá a cualquier venture, a cualquier ronda, a cualquier ciclo. Construimos para la Europa de 2050, no para el deck de 2026.</p>
+      <p class="manifesto-p is-close" data-en="Europe is waking up. We are awake. Build with us." data-es="Europa está despertando. Nosotros estamos despiertos. Construye con nosotros.">Europa está despertando. Nosotros estamos despiertos. Construye con nosotros.</p>
+      <hr class="manifesto-rule" />
+      <p class="manifesto-sign" data-en="Arquetipo Works" data-es="Arquetipo Works">Arquetipo Works</p>
+      <p class="manifesto-sign-tag" data-en="Building what Europe must own." data-es="Construir lo que Europa debe poseer." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa debe poseer.</p>
+    </div>
+  </div>
+</section>
+
+<div class="believe-rest">
+<!-- MISSION -->
+<section class="wb" style="border-top:none;">
+  <div class="wrap">
+    <div class="wb__inner">
+      <div class="wb__idx"><p class="wb__rn">I</p><p class="wb__idxlabel" data-en="The frame" data-es="El marco">El marco</p></div>
+      <div>
+        <p class="wb__eyebrow" data-en="Mission" data-es="Misión">Misión</p>
+        <p class="wb__statement reveal" data-en="Build the companies, technologies and industrial capabilities Europe must own — to stay free, sovereign, and able to defend its way of life." data-es="Construir las empresas, tecnologías y capacidades industriales que Europa debe poseer — para seguir libre, soberana y capaz de defender su forma de vida.">Construir las empresas, tecnologías y capacidades industriales que Europa debe poseer — para seguir libre, soberana y capaz de defender su forma de vida.</p>
+        <div class="wb__rule reveal"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE THREE MISSIONS -->
+<section class="wb wb--missions">
+  <div class="wrap">
+    <div class="wb__inner">
+      <div class="wb__idx"><p class="wb__rn">II</p><p class="wb__idxlabel" data-en="The method" data-es="El método">El método</p></div>
+      <div>
+        <p class="wb__eyebrow" data-en="Three Missions" data-es="Tres Misiones">Tres Misiones</p>
+        <p class="wb__statement reveal" style="font-size:clamp(20px,2vw,28px);max-width:46ch;line-height:1.4;color:var(--muted);" data-en="We deliver the Mission through three Missions — capability blocks of ventures under one thesis, exited together. We do not pick winners. We build the block." data-es="Entregamos la Misión a través de tres Misiones — bloques de capacidad de ventures bajo una misma tesis, sacadas juntas. No elegimos ganadores. Construimos el bloque.">Entregamos la Misión a través de tres Misiones — bloques de capacidad de ventures bajo una misma tesis, sacadas juntas. No elegimos ganadores. Construimos el bloque.</p>
+        <div class="wb-missions reveal">
+          <div class="wb-mission">
+            <div>
+              <p class="wb-mission__name">Spectrum</p>
+              <p class="wb-mission__tag" data-en="The spectrum is sovereign territory." data-es="El espectro es territorio soberano.">El espectro es territorio soberano.</p>
+            </div>
+            <p class="wb-mission__brief" data-en="The analytics, the silicon and the security layers that let Europe sense, decide and defend inside the spectrum — without permission from anyone else." data-es="La analítica, el silicio y las capas de seguridad que permiten a Europa sentir, decidir y defenderse dentro del espectro — sin permiso de nadie más.">La analítica, el silicio y las capas de seguridad que permiten a Europa sentir, decidir y defenderse dentro del espectro — sin permiso de nadie más.</p>
+          </div>
+          <div class="wb-mission">
+            <div>
+              <p class="wb-mission__name">Autonomy</p>
+              <p class="wb-mission__tag" data-en="Autonomy under European command." data-es="Autonomía bajo mando europeo.">Autonomía bajo mando europeo.</p>
+            </div>
+            <p class="wb-mission__brief" data-en="The platforms, the certifiable runtime and the trained behaviors that keep autonomous systems answering to European operators." data-es="Las plataformas, el runtime certificable y los comportamientos entrenados que mantienen los sistemas autónomos respondiendo a operadores europeos.">Las plataformas, el runtime certificable y los comportamientos entrenados que mantienen los sistemas autónomos respondiendo a operadores europeos.</p>
+          </div>
+          <div class="wb-mission">
+            <div>
+              <p class="wb-mission__name">Compute</p>
+              <p class="wb-mission__tag" data-en="Compute Europe controls, end to end." data-es="Cómputo que Europa controla, de extremo a extremo.">Cómputo que Europa controla, de extremo a extremo.</p>
+            </div>
+            <p class="wb-mission__brief" data-en="The silicon, the high-performance compute and the safety-critical execution layers that no foreign jurisdiction can withdraw." data-es="El silicio, el cómputo de alto rendimiento y las capas de ejecución safety-critical que ninguna jurisdicción foránea puede retirar.">El silicio, el cómputo de alto rendimiento y las capas de ejecución safety-critical que ninguna jurisdicción foránea puede retirar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="wb">
+  <div class="wrap">
+    <div class="wb__inner">
+      <div class="wb__idx"><p class="wb__rn">III</p><p class="wb__idxlabel" data-en="The horizon" data-es="El horizonte">El horizonte</p></div>
+      <div>
+        <p class="wb__eyebrow" data-en="Vision" data-es="Visión">Visión</p>
+        <p class="wb__statement reveal" data-en="A Europe that anchors the West — economically strong, technologically sovereign, militarily capable, and confident in the democratic values it gave the world." data-es="Una Europa que ancla a Occidente — fuerte económicamente, soberana tecnológicamente, capaz militarmente, y confiada en los valores democráticos que dio al mundo.">Una Europa que ancla a Occidente — fuerte económicamente, soberana tecnológicamente, capaz militarmente, y confiada en los valores democráticos que dio al mundo.</p>
+        <div class="wb__rule reveal"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="wb wb--missions">
+  <div class="wrap">
+    <div class="wb__inner">
+      <div class="wb__idx"><p class="wb__rn">IV</p><p class="wb__idxlabel" data-en="The filter" data-es="El filtro">El filtro</p></div>
+      <div>
+        <p class="wb__eyebrow" data-en="Values" data-es="Valores">Valores</p>
+        <h2 class="wb-vhead reveal" data-en="Four non-negotiable contrasts." data-es="Cuatro contrastes innegociables.">Cuatro contrastes innegociables.</h2>
+        <p class="wb-vsub reveal" data-en="Each is a decision filter, not a poster." data-es="Cada uno es un filtro de decisión, no un póster.">Cada uno es un filtro de decisión, no un póster.</p>
+        <div class="wb-vgrid reveal">
+          <article class="wb-vcell">
+            <div class="wb-vcell__top"><span class="wb-vcell__num">01</span><h3 class="wb-vcell__name" data-en="Mission over career" data-es="Misión por encima de carrera">Misión por encima de carrera</h3></div>
+            <p class="wb-vcell__body" data-en="Only those who share the conviction work here. We do not hire mercenaries — engineers, operators, or founders chasing the highest bidder. Compensation matters. Mission decides." data-es="Sólo trabaja aquí quien comparte la convicción. No contratamos mercenarios — ingenieros, operadores o fundadores persiguiendo al mejor postor. La compensación importa. La misión decide.">Sólo trabaja aquí quien comparte la convicción. No contratamos mercenarios — ingenieros, operadores o fundadores persiguiendo al mejor postor. La compensación importa. La misión decide.</p>
+          </article>
+          <article class="wb-vcell">
+            <div class="wb-vcell__top"><span class="wb-vcell__num">02</span><h3 class="wb-vcell__name" data-en="Build over pitch" data-es="Construir por encima de presentar">Construir por encima de presentar</h3></div>
+            <p class="wb-vcell__body" data-en="We build for TRL 7 and above. Demos without substance, defense PR theatre, and decks that never close are anti-Arquetipo. The product is the proof." data-es="Construimos para TRL 7 o superior. Las demos sin sustancia, el teatro de PR de Defensa y los decks que nunca cierran son anti-Arquetipo. El producto es la prueba.">Construimos para TRL 7 o superior. Las demos sin sustancia, el teatro de PR de Defensa y los decks que nunca cierran son anti-Arquetipo. El producto es la prueba.</p>
+          </article>
+          <article class="wb-vcell">
+            <div class="wb-vcell__top"><span class="wb-vcell__num">03</span><h3 class="wb-vcell__name" data-en="Europe over comfort" data-es="Europa por encima de la comodidad">Europa por encima de la comodidad</h3></div>
+            <p class="wb-vcell__body" data-en="We build in Europe, for Europe, with European supply chains when the option exists. It is more expensive and slower. We accept that. Sovereignty is not a discount." data-es="Construimos en Europa, para Europa, con cadenas de suministro europeas cuando existe la opción. Es más caro y más lento. Lo aceptamos. La soberanía no admite descuento.">Construimos en Europa, para Europa, con cadenas de suministro europeas cuando existe la opción. Es más caro y más lento. Lo aceptamos. La soberanía no admite descuento.</p>
+          </article>
+          <article class="wb-vcell">
+            <div class="wb-vcell__top"><span class="wb-vcell__num">04</span><h3 class="wb-vcell__name" data-en="Allies, never dependence" data-es="Aliados, nunca dependencia">Aliados, nunca dependencia</h3></div>
+            <p class="wb-vcell__body" data-en="We work with the UK, the US, Korea, Israel, and any ally aligned with our values. We do not depend on them for anything that is sovereign. Anti-Americanism is rejected. American dependence is also rejected." data-es="Trabajamos con el Reino Unido, Estados Unidos, Corea, Israel y cualquier aliado alineado con nuestros valores. No dependemos de ellos para nada soberano. Rechazamos el antiamericanismo. Rechazamos la dependencia americana.">Trabajamos con el Reino Unido, Estados Unidos, Corea, Israel y cualquier aliado alineado con nuestros valores. No dependemos de ellos para nada soberano. Rechazamos el antiamericanismo. Rechazamos la dependencia americana.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">ARQUETIPO</div>
+      <nav class="foot-nav">
+        <a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+        <a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+        <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+        <a href="news.html" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+        <a href="portfolio.html" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+        <a href="contact.html" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      </nav>
+    </div>
+    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I and Prometeo I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
+    <div class="foot-legal-links">
+      <a href="legal.html#aviso" data-en="Legal notice" data-es="Aviso legal" data-de="Impressum">Aviso legal</a>
+      <a href="legal.html#privacidad" data-en="Privacy policy" data-es="Política de privacidad" data-de="Datenschutz">Política de privacidad</a>
+      <a href="legal.html#cookies" data-en="Cookies" data-es="Cookies" data-de="Cookies">Cookies</a>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Arquetipo Works — Arquetipo Studio SL, Madrid</span>
+      <span data-en="Building what Europe must own." data-es="Construir lo que Europa debe poseer." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa debe poseer.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="arquetipo.js"></script>
+<script src="tweaks.js"></script>
+<div class="lang-fixed"><div class="lang" aria-label="Language"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div></div>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arquetipo — Qué construimos</title>
+  <meta name="description" content="Seis dominios de ingeniería y tres vehículos acoplados — Studio, Misiones, Fondos. Las capacidades que Europa debe poseer." />
+  <meta name="description" lang="en" content="Six engineering domains and three coupled vehicles — Studio, Missions, Funds. The capabilities Europe must own." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Arquetipo Studio SL" />
+  <meta name="theme-color" content="#14181C" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline'; img-src 'self' https: data: blob:; media-src 'self' https: data: blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'" />
+  <link rel="canonical" href="https://arquetipo.com/build.html" />
+  <link rel="alternate" hreflang="es" href="https://arquetipo.com/build.html" />
+  <link rel="alternate" hreflang="en" href="https://arquetipo.com/build.html" />
+  <link rel="alternate" hreflang="de" href="https://arquetipo.com/build.html" />
+  <link rel="alternate" hreflang="x-default" href="https://arquetipo.com/build.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Arquetipo" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:title" content="Arquetipo — What We Build" />
+  <meta property="og:description" content="Six engineering domains and three coupled vehicles — Studio, Missions, Funds. The capabilities Europe must own." />
+  <meta property="og:url" content="https://arquetipo.com/build.html" />
+  <meta property="og:image" content="https://arquetipo.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arquetipo — What We Build" />
+  <meta name="twitter:description" content="Six engineering domains and three coupled vehicles — Studio, Missions, Funds. The capabilities Europe must own." />
+  <meta name="twitter:image" content="https://arquetipo.com/og-image.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <!-- @seo-block -->
+<meta name="description" content="Seis dominios de ingeniería. Tres vehículos acoplados. Tres ventures vivas, seis en formación." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="arquetipo.css" />
+<style id="build-scroll-css">
+/* What We Build — scroll-driven six-domain stage + hero parallax */
+.dsc{position:relative;background:var(--ink);}
+.dsc-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;}
+.dsc-bg{position:absolute;inset:0;z-index:0;}
+.dsc-bg__layer{position:absolute;inset:-6% -3%;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.06);opacity:0;transform:scale(1.05);transition:opacity 1s ease;will-change:opacity,transform;}
+.dsc-bg__layer.on{opacity:.46;}
+.dsc-veil{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(90deg,rgba(20,24,28,.86) 0%,rgba(20,24,28,.5) 52%,rgba(20,24,28,.32) 100%),
+  linear-gradient(0deg,rgba(20,24,28,.7) 0%,transparent 40%);}
+.dsc-fg{position:relative;z-index:2;width:100%;}
+.dsc-eyebrow{color:var(--serene);margin:0 0 clamp(28px,5vh,56px);}
+.dsc-stage{position:relative;min-height:clamp(280px,42vh,420px);}
+.dsc-slide{position:absolute;inset:0;opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.1,1);pointer-events:none;max-width:30ch;}
+.dsc-slide.on{opacity:1;transform:none;pointer-events:auto;}
+.dsc-slide__num{font-family:var(--mono);font-size:13px;letter-spacing:.16em;color:var(--serene);margin:0 0 clamp(18px,3vh,30px);}
+.dsc-slide__tot{color:var(--serene-strong);margin-left:8px;}
+.dsc-slide__title{font-family:var(--display);font-weight:500;font-size:clamp(30px,4.6vw,60px);line-height:1.02;letter-spacing:-.025em;color:var(--bg);margin:0 0 18px;text-wrap:balance;}
+.dsc-slide__manifesto{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.6vw,22px);line-height:1.3;color:var(--serene);margin:0 0 22px;}
+.dsc-slide__scope{font-size:clamp(14px,1.05vw,16px);line-height:1.6;color:#c7d2da;margin:0;max-width:42ch;padding-top:20px;border-top:1px solid rgba(168,187,201,.28);}
+/* progress rail */
+.dsc-rail{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px;}
+.dsc-tick{display:flex;align-items:center;gap:12px;background:none;border:none;cursor:pointer;padding:0;color:var(--serene-strong);opacity:.5;transition:opacity .3s;}
+.dsc-tick__n{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--serene);min-width:20px;text-align:right;}
+.dsc-tick__bar{display:block;width:34px;height:2px;background:var(--serene);transform:scaleX(.4);transform-origin:right;transition:transform .35s ease,background .35s;}
+.dsc-tick.on{opacity:1;}
+.dsc-tick.on .dsc-tick__bar{transform:scaleX(1);}
+.dsc-tick:hover{opacity:.85;}
+/* spacer drives the scroll length: ~1 viewport per domain */
+.dsc-spacer{height:520vh;}
+@media(max-width:680px){
+  .dsc-rail{right:auto;left:0;top:auto;bottom:max(20px,4vh);transform:none;flex-direction:row;gap:9px;}
+  .dsc-tick__bar{width:20px;}
+  .dsc-tick__n{display:none;}
+  .dsc-veil{background:linear-gradient(0deg,rgba(20,24,28,.85) 8%,rgba(20,24,28,.45) 100%);}
+}
+/* Hero slow parallax */
+#build-hero-bg{will-change:transform;}
+@media(prefers-reduced-motion:reduce){.dsc-bg__layer{transition:none;}}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="home.html" class="brand">ARQUETIPO</a>
+    <div class="nav-links">
+      <a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+      <a href="build.html" class="active" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+      <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+    </div>
+    <div class="nav-right">
+      <a href="portfolio.html" class="nav-news" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+      <a href="news.html" class="nav-news" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+      <a href="contact.html" class="nav-cta" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      <a href="join.html" class="nav-join" data-en="Join us" data-es="Únete" data-de="Mitmachen">Únete</a>
+      <button class="nav-toggle" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" data-open="false">
+  <div class="nav-overlay-top"><span class="brand">ARQUETIPO</span><button class="nav-toggle" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="1.5"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button></div>
+  <ul>
+    <li><a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a></li>
+    <li><a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a></li>
+    <li><a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="news.html" class="btn-link" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+    <a href="portfolio.html" class="btn-link" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+    <div class="lang"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div>
+    <a href="contact.html" class="btn-link" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+  </div>
+</div>
+
+<main>
+<!-- HERO -->
+<header class="hero hero--tall">
+  <div class="hero-bg" id="build-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&amp;fit=crop&amp;w=1920&amp;q=72&amp;sat=-100');"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</p>
+    <h1 data-en="The capabilities Europe must own." data-es="Las capacidades que Europa debe poseer.">Las capacidades que Europa debe poseer.</h1>
+    <p class="hero-sub" data-en="We originate, operate and capitalise the European companies building the sovereign capabilities Europe must own." data-es="Originamos, operamos y capitalizamos las empresas europeas que construyen las capacidades soberanas que Europa debe poseer.">Originamos, operamos y capitalizamos las empresas europeas que construyen las capacidades soberanas que Europa debe poseer.</p>
+  </div>
+</header>
+
+<!-- SIX DOMAINS — scroll-driven -->
+<section class="dsc" id="domains" aria-label="What we work on">
+  <div class="dsc-sticky">
+    <div class="dsc-bg">
+      <div class="dsc-bg__layer on" data-i="0" style="background-image:url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+      <div class="dsc-bg__layer" data-i="1" style="background-image:url('https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+      <div class="dsc-bg__layer" data-i="2" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+      <div class="dsc-bg__layer" data-i="3" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+      <div class="dsc-bg__layer" data-i="4" style="background-image:url('https://images.unsplash.com/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+      <div class="dsc-bg__layer" data-i="5" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1800&q=72&sat=-100')"></div>
+    </div>
+    <div class="dsc-veil"></div>
+    <div class="wrap dsc-fg">
+      <p class="eyebrow dsc-eyebrow" data-en="What we work on" data-es="En qué trabajamos">En qué trabajamos</p>
+      <div class="dsc-stage">
+      <article class="dsc-slide on" data-i="0">
+        <p class="dsc-slide__num">01<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Autonomy &amp; Intelligent Systems" data-es="Autonomía y Sistemas Inteligentes">Autonomía y Sistemas Inteligentes</h3>
+        <p class="dsc-slide__manifesto" data-en="Operators in command, always." data-es="Operadores al mando, siempre.">Operadores al mando, siempre.</p>
+        <p class="dsc-slide__scope" data-en="Certifiable autonomy runtime, edge orchestration, collaborative swarming, mission-trained behaviors." data-es="Runtime de autonomía certificable, orquestación en el borde, enjambres colaborativos, comportamientos entrenados para misión.">Runtime de autonomía certificable, orquestación en el borde, enjambres colaborativos, comportamientos entrenados para misión.</p>
+      </article>
+      <article class="dsc-slide" data-i="1">
+        <p class="dsc-slide__num">02<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Defense &amp; Security Technologies" data-es="Tecnologías de Defensa y Seguridad">Tecnologías de Defensa y Seguridad</h3>
+        <p class="dsc-slide__manifesto" data-en="What cannot be outsourced." data-es="Lo que no se externaliza.">Lo que no se externaliza.</p>
+        <p class="dsc-slide__scope" data-en="Mission analytics, decision-support platforms, electronic warfare software, predictive maintenance." data-es="Analítica de misión, plataformas de soporte a la decisión, software de guerra electrónica, mantenimiento predictivo.">Analítica de misión, plataformas de soporte a la decisión, software de guerra electrónica, mantenimiento predictivo.</p>
+      </article>
+      <article class="dsc-slide" data-i="2">
+        <p class="dsc-slide__num">03<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Compute &amp; Edge Systems" data-es="Cómputo y Edge Systems">Cómputo y Edge Systems</h3>
+        <p class="dsc-slide__manifesto" data-en="Sovereign compute, no foreign kernel." data-es="Cómputo soberano, sin kernel foráneo.">Cómputo soberano, sin kernel foráneo.</p>
+        <p class="dsc-slide__scope" data-en="Mission-HPC, edge inference, deterministic execution substrates for safety-critical systems." data-es="HPC para misión, inferencia en el borde, sustratos de ejecución determinista para sistemas críticos.">HPC para misión, inferencia en el borde, sustratos de ejecución determinista para sistemas críticos.</p>
+      </article>
+      <article class="dsc-slide" data-i="3">
+        <p class="dsc-slide__num">04<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Sensing &amp; Embedded Systems" data-es="Sensores y Sistemas Embebidos">Sensores y Sistemas Embebidos</h3>
+        <p class="dsc-slide__manifesto" data-en="See first. Decide first." data-es="Ver primero. Decidir primero.">Ver primero. Decidir primero.</p>
+        <p class="dsc-slide__scope" data-en="Multi-spectral fusion, embedded perception pipelines, real-time signal processing." data-es="Fusión multiespectral, pipelines de percepción embebida, procesado de señal en tiempo real.">Fusión multiespectral, pipelines de percepción embebida, procesado de señal en tiempo real.</p>
+      </article>
+      <article class="dsc-slide" data-i="4">
+        <p class="dsc-slide__num">05<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Strategic Hardware" data-es="Hardware Estratégico">Hardware Estratégico</h3>
+        <p class="dsc-slide__manifesto" data-en="Silicon designed in Europe." data-es="Silicio diseñado en Europa.">Silicio diseñado en Europa.</p>
+        <p class="dsc-slide__scope" data-en="Sovereign silicon design — RISC-V cores, AI-defined accelerators, safety-critical SoCs." data-es="Diseño de silicio soberano — cores RISC-V, aceleradores definidos por IA, SoCs críticos.">Diseño de silicio soberano — cores RISC-V, aceleradores definidos por IA, SoCs críticos.</p>
+      </article>
+      <article class="dsc-slide" data-i="5">
+        <p class="dsc-slide__num">06<span class="dsc-slide__tot">/ 06</span></p>
+        <h3 class="dsc-slide__title" data-en="Industrial AI" data-es="IA Industrial">IA Industrial</h3>
+        <p class="dsc-slide__manifesto" data-en="AI that passes certification." data-es="IA que pasa la certificación.">IA que pasa la certificación.</p>
+        <p class="dsc-slide__scope" data-en="Certifiable machine learning for safety-critical industrial systems — DO-178C DAL pathways." data-es="Machine learning certificable para sistemas industriales críticos — caminos de cert DO-178C DAL.">Machine learning certificable para sistemas industriales críticos — caminos de cert DO-178C DAL.</p>
+      </article>
+      </div>
+      <div class="dsc-rail">
+      <button class="dsc-tick on" data-i="0" aria-label="01"><span class="dsc-tick__n">01</span><span class="dsc-tick__bar"></span></button>
+      <button class="dsc-tick" data-i="1" aria-label="02"><span class="dsc-tick__n">02</span><span class="dsc-tick__bar"></span></button>
+      <button class="dsc-tick" data-i="2" aria-label="03"><span class="dsc-tick__n">03</span><span class="dsc-tick__bar"></span></button>
+      <button class="dsc-tick" data-i="3" aria-label="04"><span class="dsc-tick__n">04</span><span class="dsc-tick__bar"></span></button>
+      <button class="dsc-tick" data-i="4" aria-label="05"><span class="dsc-tick__n">05</span><span class="dsc-tick__bar"></span></button>
+      <button class="dsc-tick" data-i="5" aria-label="06"><span class="dsc-tick__n">06</span><span class="dsc-tick__bar"></span></button>
+      </div>
+    </div>
+  </div>
+  <div class="dsc-spacer"></div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <p class="eyebrow" data-en="Who builds it" data-es="Quién lo construye">Quién lo construye</p>
+    <h2 data-en="Behind every venture, the same bench." data-es="Detrás de cada venture, el mismo equipo.">Detrás de cada venture, el mismo equipo.</h2>
+    <div class="btn-row">
+      <a href="who.html" class="btn" data-en="Meet the team" data-es="Ver el equipo">Ver el equipo</a>
+      <a href="contact.html" class="btn btn-ghost" data-en="Get in touch" data-es="Contactar">Contactar</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">ARQUETIPO</div>
+      <nav class="foot-nav">
+        <a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+        <a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+        <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+        <a href="news.html" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+        <a href="portfolio.html" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+        <a href="contact.html" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      </nav>
+    </div>
+    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I and Prometeo I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
+    <div class="foot-legal-links">
+      <a href="legal.html#aviso" data-en="Legal notice" data-es="Aviso legal" data-de="Impressum">Aviso legal</a>
+      <a href="legal.html#privacidad" data-en="Privacy policy" data-es="Política de privacidad" data-de="Datenschutz">Política de privacidad</a>
+      <a href="legal.html#cookies" data-en="Cookies" data-es="Cookies" data-de="Cookies">Cookies</a>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Arquetipo Works — Arquetipo Studio SL, Madrid</span>
+      <span data-en="Building what Europe must own." data-es="Construir lo que Europa debe poseer." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa debe poseer.</span>
+    </div>
+  </div>
+</footer>
+
+<script id="build-scroll-js">
+/* What We Build — scroll-driven domains + hero parallax */
+(function () {
+  function init() {
+    var sec = document.querySelector(".dsc");
+    var spacer = document.querySelector(".dsc-spacer");
+    if (!sec) return;
+    var layers = [].slice.call(sec.querySelectorAll(".dsc-bg__layer"));
+    var slides = [].slice.call(sec.querySelectorAll(".dsc-slide"));
+    var ticks = [].slice.call(sec.querySelectorAll(".dsc-tick"));
+    var hero = document.getElementById("build-hero-bg");
+    var N = slides.length || 6;
+    var cur = -1;
+
+    function setActive(i) {
+      if (i === cur) return;
+      cur = i;
+      layers.forEach(function (el, k) { el.classList.toggle("on", k === i); });
+      slides.forEach(function (el, k) { el.classList.toggle("on", k === i); });
+      ticks.forEach(function (el, k) { el.classList.toggle("on", k === i); });
+    }
+
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        // hero parallax
+        if (hero) {
+          var y = window.pageYOffset || 0;
+          hero.style.transform = "translateY(" + (y * 0.34) + "px) scale(1.26)";
+        }
+        // domains progress
+        var rect = sec.getBoundingClientRect();
+        var total = sec.offsetHeight - window.innerHeight;
+        if (total <= 0) { setActive(0); return; }
+        var scrolled = Math.min(Math.max(-rect.top, 0), total);
+        var p = scrolled / total;                 // 0..1 over whole section
+        var fp = Math.min(p * N, N - 0.0001);
+        var idx = Math.floor(fp);
+        var intra = fp - idx;                      // 0..1 within active domain
+        setActive(idx);
+        // slow parallax on active image
+        var act = layers[idx];
+        if (act) {
+          var ty = (intra - 0.5) * -46;            // px
+          var sc = 1.05 + intra * 0.10;            // 1.05 -> 1.15
+          act.style.transform = "translateY(" + ty + "px) scale(" + sc.toFixed(3) + ")";
+        }
+      });
+    }
+
+    // tick jump
+    ticks.forEach(function (t, i) {
+      t.addEventListener("click", function () {
+        var total = sec.offsetHeight - window.innerHeight;
+        var top = sec.offsetTop + ((i + 0.5) / N) * total;
+        window.scrollTo({ top: top, behavior: "smooth" });
+      });
+    });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    setActive(0);
+    onScroll();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+
+</script>
+<script src="arquetipo.js"></script>
+<script src="tweaks.js"></script>
+<div class="lang-fixed"><div class="lang" aria-label="Language"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div></div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arquetipo — Contacto</title>
+  <meta name="description" content="Hablemos. Sedes en Madrid, Bilbao, Málaga y Múnich (2027). Inversores, industria, gobierno, prensa y talento." />
+  <meta name="description" lang="en" content="Get in touch. Offices in Madrid, Bilbao, Málaga and Munich (2027). Investors, industry, government, press and talent." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Arquetipo Studio SL" />
+  <meta name="theme-color" content="#14181C" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob: 'unsafe-inline'; img-src 'self' https: data: blob:; media-src 'self' https: data: blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'" />
+  <link rel="canonical" href="https://arquetipo.com/contact.html" />
+  <link rel="alternate" hreflang="es" href="https://arquetipo.com/contact.html" />
+  <link rel="alternate" hreflang="en" href="https://arquetipo.com/contact.html" />
+  <link rel="alternate" hreflang="de" href="https://arquetipo.com/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://arquetipo.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Arquetipo" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:title" content="Arquetipo — Contact" />
+  <meta property="og:description" content="Get in touch. Offices in Madrid, Bilbao, Málaga and Munich (2027). Investors, industry, government, press and talent." />
+  <meta property="og:url" content="https://arquetipo.com/contact.html" />
+  <meta property="og:image" content="https://arquetipo.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arquetipo — Contact" />
+  <meta name="twitter:description" content="Get in touch. Offices in Madrid, Bilbao, Málaga and Munich (2027). Investors, industry, government, press and talent." />
+  <meta name="twitter:image" content="https://arquetipo.com/og-image.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <!-- @seo-block -->
+<meta name="description" content="Contacto de Arquetipo Works — inversores, industria, gobierno, prensa y talento. Sedes en Madrid, Bilbao, Málaga y Múnich (2027)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="arquetipo.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<style>
+  .contact-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,6vw,88px);align-items:start;}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+  .contact-routes{border-top:1px solid var(--line);}
+  .contact-route{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:clamp(14px,2vw,32px);padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .contact-route dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0;}
+  .contact-route dd{margin:0;font-size:15px;line-height:1.5;color:var(--muted);}
+  .contact-route dd a{color:var(--ink);border-bottom:1px solid var(--serene-strong);padding-bottom:1px;transition:border-color .2s;}
+  .contact-route dd a:hover{border-color:var(--ink);}
+  .contact-aside{border-left:1px solid var(--line);padding-left:clamp(24px,3vw,44px);}
+  @media(max-width:820px){.contact-aside{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:32px;}}
+  .contact-aside h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 16px;}
+  .contact-aside .big-email{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.014em;color:var(--ink);line-height:1.1;display:inline-block;margin:0 0 28px;border-bottom:1px solid var(--serene-strong);padding-bottom:3px;}
+  .contact-aside .hq{font-style:normal;}
+  .contact-aside .hq p{margin:0 0 3px;font-size:15px;line-height:1.55;color:var(--muted);}
+  .contact-aside .hq .hq-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 8px;}
+  /* Offices map */
+  .sedes-map{position:relative;width:100%;aspect-ratio:16/8;min-height:360px;border:1px solid var(--line-dk);background:#11171c;overflow:hidden;isolation:isolate;z-index:0;}
+  .sedes-map .leaflet-container{width:100%;height:100%;background:#11171c;font-family:var(--body);}
+  .sedes-map::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:500;box-shadow:inset 0 0 120px 10px rgba(10,12,14,.55);}
+  .leaflet-control-attribution{background:rgba(10,12,14,.6)!important;color:var(--faint)!important;font-size:9px!important;}
+  .leaflet-control-attribution a{color:var(--serene-strong)!important;}
+  .leaflet-bar a{background:#1A1A1A!important;color:var(--serene)!important;border-color:var(--line-dk)!important;}
+  .leaflet-bar a:hover{background:#222c33!important;}
+  .sede-dot{display:block;width:14px;height:14px;border-radius:50%;background:var(--serene);box-shadow:0 0 0 4px rgba(168,187,201,.18),0 0 16px rgba(168,187,201,.6);transition:transform .2s;}
+  .sede-pin:hover .sede-dot{transform:scale(1.25);}
+  .sede-pin--future .sede-dot{background:transparent;border:2px dashed var(--serene-strong);box-shadow:none;}
+  .sede-cluster{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(26,32,38,.92);border:1px solid var(--serene);box-shadow:0 0 0 4px rgba(168,187,201,.16),0 0 16px rgba(168,187,201,.45);}
+  .sede-cluster span{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--serene);line-height:1;}
+  path.leaflet-cluster-spider-leg{stroke:var(--serene)!important;stroke-opacity:.65!important;stroke-width:1.4!important;}
+  .leaflet-popup-content-wrapper{background:#1A1A1A;color:var(--bg);border-radius:0;border:1px solid rgba(168,187,201,.32);box-shadow:0 14px 44px rgba(0,0,0,.55);}
+  .leaflet-popup-content{margin:0!important;width:248px!important;}
+  .leaflet-popup-tip{background:#1A1A1A;border:1px solid rgba(168,187,201,.32);}
+  .leaflet-popup-close-button{color:var(--serene)!important;padding:8px 8px 0 0!important;}
+  .leaflet-popup-close-button:hover{color:var(--bg)!important;}
+  .sede-pop__img{height:120px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.04);border-bottom:1px solid rgba(168,187,201,.28);}
+  .sede-pop__body{padding:16px 18px 17px;}
+  .sede-pop__kind{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--serene);margin:0 0 7px;}
+  .sede-pop__city{font-family:var(--display);font-weight:500;font-size:23px;line-height:1;letter-spacing:-.012em;margin:0 0 8px;color:var(--bg);}
+  .sede-pop__addr{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--serene-strong);margin:0 0 10px;}
+  .sede-pop__tag{font-size:13.5px;line-height:1.5;color:#cfd8de;margin:0;max-width:30ch;}
+  .sede-pop__gmaps{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--serene);border:1px solid rgba(168,187,201,.4);padding:7px 11px;transition:background .2s,color .2s;}
+  .sede-pop__gmaps:hover{background:var(--serene);color:#11171c;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="home.html" class="brand">ARQUETIPO</a>
+    <div class="nav-links">
+      <a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+      <a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+      <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+    </div>
+    <div class="nav-right">
+      <a href="portfolio.html" class="nav-news" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+      <a href="news.html" class="nav-news" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+      <a href="contact.html" class="nav-cta" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      <a href="join.html" class="nav-join" data-en="Join us" data-es="Únete" data-de="Mitmachen">Únete</a>
+      <button class="nav-toggle" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" data-open="false">
+  <div class="nav-overlay-top"><span class="brand">ARQUETIPO</span><button class="nav-toggle" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="1.5"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button></div>
+  <ul>
+    <li><a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a></li>
+    <li><a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a></li>
+    <li><a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a></li>
+  </ul>
+  <div class="nav-overlay-bottom">
+    <a href="news.html" class="btn-link" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+    <a href="portfolio.html" class="btn-link" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+    <div class="lang"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div>
+    <a href="contact.html" class="btn-link" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+  </div>
+</div>
+
+<main>
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</p>
+    <h1 style="font-size:clamp(40px,7vw,88px);" data-en="Let's talk." data-es="Hablemos.">Hablemos.</h1>
+    <p class="hero-sub" data-en="Whether you back, build, regulate, cover or want to join the mission — there is a direct line below." data-es="Si respaldas, construyes, regulas, cubres o quieres unirte a la misión — abajo tienes una línea directa.">Si respaldas, construyes, regulas, cubres o quieres unirte a la misión — abajo tienes una línea directa.</p>
+  </div>
+</header>
+
+<!-- CONTACT ROUTING -->
+<section class="sec">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow" data-en="Where to write" data-es="A quién escribir">A quién escribir</p>
+        <dl class="contact-routes">
+          <div class="contact-route">
+            <dt data-en="Investors" data-es="Inversores">Inversores</dt>
+            <dd data-en="LPs and co-investors aligned with European sovereignty." data-es="LPs y co-inversores alineados con la soberanía europea.">LPs y co-inversores alineados con la soberanía europea.</dd>
+          </div>
+          <div class="contact-route">
+            <dt data-en="Industry" data-es="Industria">Industria</dt>
+            <dd data-en="Primes, suppliers and integrators across the six domains." data-es="Primes, proveedores e integradores en los seis dominios.">Primes, proveedores e integradores en los seis dominios.</dd>
+          </div>
+          <div class="contact-route">
+            <dt data-en="Government" data-es="Gobierno">Gobierno</dt>
+            <dd data-en="Institutional, defense and public-sector counterparts." data-es="Interlocutores institucionales, de Defensa y sector público.">Interlocutores institucionales, de Defensa y sector público.</dd>
+          </div>
+          <div class="contact-route">
+            <dt data-en="Press" data-es="Prensa">Prensa</dt>
+            <dd><a href="news.html" data-en="Newsroom and media assets →" data-es="Sala de prensa y material →">Sala de prensa y material →</a></dd>
+          </div>
+          <div class="contact-route">
+            <dt data-en="Talent" data-es="Talento">Talento</dt>
+            <dd><a href="who.html#careers" data-en="Open roles across the six domains →" data-es="Vacantes en los seis dominios →">Vacantes en los seis dominios →</a></dd>
+          </div>
+        </dl>
+      </div>
+      <div class="contact-aside">
+        <h3 data-en="Direct" data-es="Directo">Directo</h3>
+        <a class="big-email" href="mailto:hello@arquetipo.com">hello@arquetipo.com</a>
+        <div class="hq">
+          <p class="hq-label" data-en="Headquarters" data-es="Sede central">Sede central</p>
+          <p>Arquetipo Works</p>
+          <p>Calle Duque de Sesto, 42</p>
+          <p>28009 Madrid · España</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICES -->
+<section class="sec sec--ink" id="sedes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-en="Offices" data-es="Sedes">Sedes</p>
+      <h2 class="h-lg" style="color:var(--bg);max-width:16ch;" data-en="Where we build." data-es="Donde construimos.">Donde construimos.</h2>
+    </div>
+
+    <div class="sedes-map reveal" id="sedes-map" role="application" aria-label="Mapa de sedes de Arquetipo"></div>
+
+    <div class="offices-grid offices-grid--contact reveal" style="border-top-color:var(--line-dk);border-left-color:var(--line-dk);">
+      <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <p class="office-kind" style="color:var(--serene-strong);" data-en="Headquarters · Studio" data-es="Sede · Studio">Sede · Studio</p>
+        <h3 class="office-city" style="color:var(--bg);">Madrid</h3>
+        <div class="office-addr-lines" style="margin-bottom:20px;">
+          <p class="ln"><b data-en="Headquarters" data-es="Sede">Sede</b><span>Calle Duque de Sesto, 42</span></p>
+          <p class="ln"><b>Studio</b><span>Paseo de la Castellana, 93</span></p>
+        </div>
+        <p class="office-tagline" style="color:var(--bg);" data-en="Studio direction, board and Public Affairs." data-es="Dirección del Studio, consejo y Asuntos Públicos.">Dirección del Studio, consejo y Asuntos Públicos.</p>
+      </article>
+      <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
+        <h3 class="office-city" style="color:var(--bg);">Bilbao</h3>
+        <p class="office-address" style="color:var(--serene);">Bizkaia Accelerator Tower</p>
+        <p class="office-tagline" style="color:var(--bg);" data-en="Foral R&amp;D entity. Where Studio engineering ships." data-es="Entidad I+D foral. Donde la ingeniería del Studio entrega.">Entidad I+D foral. Donde la ingeniería del Studio entrega.</p>
+      </article>
+      <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
+        <h3 class="office-city" style="color:var(--bg);">Málaga</h3>
+        <p class="office-address" style="color:var(--serene);">Paseo del Limonar, 31</p>
+        <p class="office-tagline" style="color:var(--bg);" data-en="Silicon corridor with IMEC and TRADE Málaga." data-es="Corredor de silicio con IMEC y TRADE Málaga.">Corredor de silicio con IMEC y TRADE Málaga.</p>
+      </article>
+      <article class="office-card office-card--future" style="background:rgba(168,187,201,.05);border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <p class="office-kind" style="color:var(--serene-strong);" data-en="Opening H2 2027" data-es="Apertura H2 2027">Apertura H2 2027</p>
+        <h3 class="office-city" style="color:var(--serene);">Múnich</h3>
+        <p class="office-address" style="color:var(--serene-strong);">Bayern, Deutschland</p>
+        <p class="office-tagline" style="color:var(--serene);" data-en="German node. European jurisdiction beyond Spain." data-es="Nodo alemán. Jurisdicción europea más allá de España.">Nodo alemán. Jurisdicción europea más allá de España.</p>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">ARQUETIPO</div>
+      <nav class="foot-nav">
+        <a href="believe.html" data-en="What We Believe" data-es="Qué creemos" data-de="Was wir glauben">Qué creemos</a>
+        <a href="build.html" data-en="What We Build" data-es="Qué construimos" data-de="Was wir bauen">Qué construimos</a>
+        <a href="who.html" data-en="Who We Are" data-es="Quiénes somos" data-de="Wer wir sind">Quiénes somos</a>
+        <a href="news.html" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
+        <a href="portfolio.html" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
+        <a href="contact.html" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+      </nav>
+    </div>
+    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I and Prometeo I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
+    <div class="foot-legal-links">
+      <a href="legal.html#aviso" data-en="Legal notice" data-es="Aviso legal" data-de="Impressum">Aviso legal</a>
+      <a href="legal.html#privacidad" data-en="Privacy policy" data-es="Política de privacidad" data-de="Datenschutz">Política de privacidad</a>
+      <a href="legal.html#cookies" data-en="Cookies" data-es="Cookies" data-de="Cookies">Cookies</a>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Arquetipo Works — Arquetipo Studio SL, Madrid</span>
+      <span data-en="Building what Europe must own." data-es="Construir lo que Europa debe poseer." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa debe poseer.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function lang(){ return localStorage.getItem("arq-lang") || "es"; }
+  function t(o){ return o[lang()] || o.en; }
+  var offices = [
+    { city:"Madrid", coord:[40.4239,-3.6766], future:false, img:"https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=560&q=72&sat=-100",
+      kind:{en:"Headquarters",es:"Sede"}, addr:"Calle Duque de Sesto, 42",
+      tag:{en:"Studio direction and Public Affairs.",es:"Dirección del Studio y Asuntos Públicos."} },
+    { city:"Bilbao", coord:[43.2630,-2.9350], future:false, img:"https://images.unsplash.com/photo-1558370781-d6196949e317?auto=format&fit=crop&w=560&q=72&sat=-100",
+      kind:{en:"Studio",es:"Studio"}, addr:"Bizkaia Accelerator Tower",
+      tag:{en:"Foral R&D entity. Where Studio engineering ships.",es:"Entidad I+D foral. Donde la ingeniería del Studio entrega."} },
+    { city:"Madrid", coord:[40.4486,-3.6919], future:false, img:"https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=560&q=72&sat=-100",
+      kind:{en:"Studio",es:"Studio"}, addr:"Paseo de la Castellana, 93",
+      tag:{en:"Institutional partners, board, investor briefings.",es:"Socios institucionales, consejo, briefings con inversores."} },
+    { city:"Málaga", coord:[36.7185,-4.3936], future:false, img:"https://images.unsplash.com/photo-1595867818082-083862f3d630?auto=format&fit=crop&w=560&q=72&sat=-100",
+      kind:{en:"Studio",es:"Studio"}, addr:"Paseo del Limonar, 31",
+      tag:{en:"Silicon corridor with IMEC and TRADE Málaga.",es:"Corredor de silicio con IMEC y TRADE Málaga."} },
+    { city:"Múnich", coord:[48.1351,11.5820], future:true, img:"https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=560&q=72&sat=-100",
+      kind:{en:"Opening H2 2027",es:"Apertura H2 2027"}, addr:"Bayern, Deutschland",
+      tag:{en:"German node. European jurisdiction beyond Spain.",es:"Nodo alemán. Jurisdicción europea más allá de España."} }
+  ];
+  function build(el){
+    var map = L.map(el, { scrollWheelZoom:false, zoomControl:true, attributionControl:true, zoomSnap:0.25 });
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      subdomains:"abcd", maxZoom:19,
+      attribution:'&copy; OpenStreetMap &copy; CARTO'
+    }).addTo(map);
+    map.attributionControl.setPrefix(false);
+    var cluster = L.markerClusterGroup({
+      maxClusterRadius: 34,
+      spiderfyDistanceMultiplier: 1.7,
+      showCoverageOnHover: false,
+      zoomToBoundsOnClick: false,
+      spiderLegPolylineOptions: { weight: 1.4, color: "#A8BBC9", opacity: 0.65 },
+      iconCreateFunction: function(c){
+        return L.divIcon({ className:"sede-cluster-wrap", html:'<div class="sede-cluster"><span>'+c.getChildCount()+'</span></div>', iconSize:[30,30], iconAnchor:[15,15] });
+      }
+    });
+    var pts = [];
+    offices.forEach(function(o){
+      var icon = L.divIcon({ className:"sede-pin"+(o.future?" sede-pin--future":""), html:'<span class="sede-dot"></span>', iconSize:[16,16], iconAnchor:[8,8] });
+      var m = L.marker(o.coord, { icon:icon });
+      var q = encodeURIComponent(o.addr + ", " + o.city);
+      var gmaps = o.future
+        ? "https://www.google.com/maps/search/?api=1&query=" + q
+        : "https://www.google.com/maps/search/?api=1&query=" + o.coord[0] + "%2C" + o.coord[1];
+      var html = '<div class="sede-pop">'
+        + '<div class="sede-pop__img" style="background-image:url(\''+o.img+'\')"></div>'
+        + '<div class="sede-pop__body">'
+        + '<p class="sede-pop__kind" data-en="'+o.kind.en+'" data-es="'+o.kind.es+'">'+t(o.kind)+'</p>'
+        + '<h4 class="sede-pop__city">'+o.city+'</h4>'
+        + '<p class="sede-pop__addr">'+o.addr+'</p>'
+        + '<p class="sede-pop__tag" data-en="'+o.tag.en+'" data-es="'+o.tag.es+'">'+t(o.tag)+'</p>'
+        + '<a class="sede-pop__gmaps" href="'+gmaps+'" target="_blank" rel="noopener" onclick="window.open(this.href,\'_blank\',\'noopener\');return false;" data-en="Open in Google Maps →" data-es="Abrir en Google Maps →" data-de="In Google Maps öffnen →">'+(lang()==="es"?"Abrir en Google Maps →":(lang()==="de"?"In Google Maps öffnen →":"Open in Google Maps →"))+'</a>'
+        + '</div>'
+        + '</div>';
+      m.bindPopup(html, { closeButton:true, offset:[0,-4], minWidth:248, maxWidth:248 });
+      cluster.addLayer(m);
+      pts.push(o.coord);
+    });
+    map.addLayer(cluster);
+    cluster.on("clusterclick", function(a){ if (a.layer.spiderfy) a.layer.spiderfy(); });
+    function frame(){ map.invalidateSize(); map.fitBounds(pts, { padding:[14,14], maxZoom:6.5 }); if (cluster.refreshClusters) cluster.refreshClusters(); }
+    frame();
+    setTimeout(frame, 300);
+  }
+  function start(){
+    if (typeof L === "undefined" || typeof L.markerClusterGroup === "undefined") { return setTimeout(start, 200); }
+    var el = document.getElementById("sedes-map");
+    if (!el) return;
+    var built = false;
+    function go(){ if (built) return; built = true; build(el); }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { io.disconnect(); go(); } }); }, { threshold:0.12 });
+      io.observe(el);
+    } else { go(); }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+</script>
+<script src="arquetipo.js"></script>
+<script src="tweaks.js"></script>
+<div class="lang-fixed"><div class="lang" aria-label="Language"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div></div>
+</body>
+</html>
