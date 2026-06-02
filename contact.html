@@ -49,7 +49,7 @@
   .contact-route{display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:clamp(14px,2vw,32px);padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline;}
   .contact-route dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0;}
   .contact-route dd{margin:0;font-size:15px;line-height:1.5;color:var(--muted);}
-  .contact-route dd a{color:var(--ink);border-bottom:1px solid var(--serene-strong);padding-bottom:1px;transition:border-color .2s;}
+  .contact-route dd a{color:var(--ink);border-bottom:1px solid var(--serene-strong);padding-bottom:1px;transition:border-color .2s;display:inline-block;margin-top:7px;font-family:var(--mono);font-size:13px;}
   .contact-route dd a:hover{border-color:var(--ink);}
   .contact-aside{border-left:1px solid var(--line);padding-left:clamp(24px,3vw,44px);}
   @media(max-width:820px){.contact-aside{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:32px;}}
@@ -117,8 +117,9 @@
   <div class="nav-overlay-bottom">
     <a href="news.html" class="btn-link" data-en="News" data-es="Noticias" data-de="Aktuelles">Noticias</a>
     <a href="portfolio.html" class="btn-link" data-en="Portfolio" data-es="Portfolio" data-de="Portfolio">Portfolio</a>
-    <div class="lang"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div>
     <a href="contact.html" class="btn-link" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
+    <a href="join.html" class="btn-link" data-en="Join us" data-es="Únete" data-de="Mitmachen">Únete</a>
+    <div class="lang"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div>
   </div>
 </div>
 
@@ -141,15 +142,15 @@
         <dl class="contact-routes">
           <div class="contact-route">
             <dt data-en="Investors" data-es="Inversores">Inversores</dt>
-            <dd data-en="LPs and co-investors aligned with European sovereignty." data-es="LPs y co-inversores alineados con la soberanía europea.">LPs y co-inversores alineados con la soberanía europea.</dd>
+            <dd><span data-en="LPs and co-investors aligned with European sovereignty." data-es="LPs y co-inversores alineados con la soberanía europea.">LPs y co-inversores alineados con la soberanía europea.</span><br/><a href="mailto:investors@arquetipo.com">investors@arquetipo.com →</a></dd>
           </div>
           <div class="contact-route">
             <dt data-en="Industry" data-es="Industria">Industria</dt>
-            <dd data-en="Primes, suppliers and integrators across the six domains." data-es="Primes, proveedores e integradores en los seis dominios.">Primes, proveedores e integradores en los seis dominios.</dd>
+            <dd><span data-en="Primes, suppliers and integrators across the six domains." data-es="Primes, proveedores e integradores en los seis dominios.">Primes, proveedores e integradores en los seis dominios.</span><br/><a href="mailto:partnerships@arquetipo.com">partnerships@arquetipo.com →</a></dd>
           </div>
           <div class="contact-route">
             <dt data-en="Government" data-es="Gobierno">Gobierno</dt>
-            <dd data-en="Institutional, defense and public-sector counterparts." data-es="Interlocutores institucionales, de Defensa y sector público.">Interlocutores institucionales, de Defensa y sector público.</dd>
+            <dd><span data-en="Institutional, defense and public-sector counterparts." data-es="Interlocutores institucionales, de Defensa y sector público.">Interlocutores institucionales, de Defensa y sector público.</span><br/><a href="mailto:gov@arquetipo.com">gov@arquetipo.com →</a></dd>
           </div>
           <div class="contact-route">
             <dt data-en="Press" data-es="Prensa">Prensa</dt>
@@ -157,7 +158,7 @@
           </div>
           <div class="contact-route">
             <dt data-en="Talent" data-es="Talento">Talento</dt>
-            <dd><a href="who.html#careers" data-en="Open roles across the six domains →" data-es="Vacantes en los seis dominios →">Vacantes en los seis dominios →</a></dd>
+            <dd><a href="join.html" data-en="Open roles across the six domains →" data-es="Vacantes en los seis dominios →">Vacantes en los seis dominios →</a></dd>
           </div>
         </dl>
       </div>
@@ -240,7 +241,7 @@
     </div>
     <div class="foot-legal">
       <span>© 2026 Arquetipo Works — Arquetipo Studio SL, Madrid</span>
-      <span data-en="Building what Europe must own." data-es="Construir lo que Europa debe poseer." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa debe poseer.</span>
+      <span data-en="Building what Europe must own." data-es="Construir lo que Europa necesita." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa necesita.</span>
     </div>
   </div>
 </footer>
