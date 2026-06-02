@@ -2,3 +2,10 @@
 [build]
   publish = "."
   command = ""
+
+# Serve raw HTML. Netlify's HTML post-processing (minify/optimize) re-quotes
+# attributes and escapes inner quotes inside inline style="...url('...')...",
+# producing invalid CSS (background-image breaks). Disable it so HTML is served
+# verbatim, exactly like the source — matching GitHub Pages behaviour.
+[build.processing]
+  skip_processing = true
