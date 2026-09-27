@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="arquetipo.css" />
+<link rel="stylesheet" href="arquetipo.css?v=2026-09" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,7 +60,7 @@
 }
 </script>
 </head>
-<body class="has-hero-video">
+<body class="has-hero-video has-intro intro-active">
 
 <!-- NAV -->
 <nav class="nav">
@@ -99,18 +99,24 @@
 <main>
 <!-- HERO -->
 <div class="hero-stage" aria-hidden="true">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="bg-poster.jpg">
+    <source src="bg-mobile.mp4" type="video/mp4" media="(max-width: 760px)" />
     <source src="bg.mp4" type="video/mp4" />
   </video>
   <div class="hero-veil"></div>
 </div>
-<header class="hero hero--tall">
+<!-- INTRO — full-screen wordmark over the hero video; the page starts on scroll -->
+<section class="intro" aria-label="Arquetipo">
+  <div class="intro-mark" aria-hidden="true">ARQUETIPO</div>
+  <a href="#hero" class="intro-cue" data-en="Scroll" data-es="Desliza" data-de="Scrollen">Desliza</a>
+</section>
+<header class="hero hero--tall" id="hero">
   <div class="wrap hero-inner">
     <p class="eyebrow">Arquetipo Works</p>
     <h1 data-en="Build what Europe must own." data-es="Construir lo que Europa necesita." data-de="Bauen, was Europa besitzen muss.">Construir lo que Europa necesita.</h1>
     <p class="hero-sub" data-en="Arquetipo is a defense-tech venture builder that originates, operates, and capitalises the European companies and technologies our sovereignty depends on." data-es="Arquetipo es una fábrica de startups (venture builder) en el ámbito de la tecnología de defensa, la IA y el uso dual. Nuestro estudio origina, opera y capitaliza las empresas y tecnologías europeas de las que depende nuestra soberanía." data-de="Arquetipo ist ein Defense-Tech-Venture-Builder, der die europäischen Unternehmen und Technologien gründet, betreibt und finanziert, von denen unsere Souveränität abhängt.">Arquetipo es una fábrica de startups (venture builder) en el ámbito de la tecnología de defensa, la IA y el uso dual. Nuestro estudio origina, opera y capitaliza las empresas y tecnologías europeas de las que depende nuestra soberanía.</p>
     <div class="btn-row">
-      <a href="build.html" class="btn" data-en="See the portfolio" data-es="Ver el portfolio" data-de="Portfolio ansehen">Ver el portfolio</a>
+      <a href="portfolio.html" class="btn" data-en="See the portfolio" data-es="Ver el portfolio" data-de="Portfolio ansehen">Ver el portfolio</a>
       <a href="believe.html" class="btn btn-ghost" data-en="Read the manifesto" data-es="Leer el manifiesto" data-de="Manifest lesen">Leer el manifiesto</a>
       <a href="post-arquetipo.html" class="btn btn-ghost" data-en="Our story" data-es="Nuestra historia" data-de="Unsere Geschichte">Nuestra historia</a>
     </div>
@@ -174,23 +180,26 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="eyebrow" data-en="Architecture" data-es="Arquitectura" data-de="Architektur">Arquitectura</p>
-      <h2 class="h-lg" style="max-width:22ch;" data-en="One platform. Three vehicles." data-es="Una plataforma. Tres vehículos." data-de="Eine Plattform. Drei Vehikel.">Una plataforma. Tres vehículos.</h2>
+      <h2 class="h-lg" style="max-width:22ch;" data-en="One platform. Three Missions." data-es="Una plataforma. Tres Misiones." data-de="Eine Plattform. Drei Missionen.">Una plataforma. Tres Misiones.</h2>
     </div>
     <div class="vehicles-row reveal" style="border-top-color:var(--line);border-left-color:var(--line);">
       <article class="vehicle-card" style="border-right-color:var(--line);border-bottom-color:var(--line);">
         <p class="vehicle-num" style="color:var(--serene-strong);">01</p>
-        <h3 class="vehicle-name" style="color:var(--ink);">Studio</h3>
-        <p class="vehicle-tag" style="color:var(--muted);" data-en="Where new ventures are built. From a sovereign capability that does not yet exist to a standalone company. Detect, form, scale." data-de="Wo neue Ventures entstehen. Von einer souveränen Fähigkeit, die es noch nicht gibt, bis zum eigenständigen Unternehmen. Erkennen, formen, skalieren." data-es="Donde se construyen nuevas ventures. De una capacidad soberana que aún no existe a una empresa autónoma. Detectar, formar y escalar.">Donde se construyen nuevas ventures. De una capacidad soberana que aún no existe a una empresa autónoma. Detectar, formar y escalar.</p>
+        <h3 class="vehicle-name" style="color:var(--ink);">Spectrum Dominance</h3>
+        <p class="vehicle-tag" style="color:var(--ink);font-weight:500;margin-bottom:12px;" data-en="The spectrum is sovereign territory." data-de="Das Spektrum ist souveränes Territorium." data-es="El espectro es territorio soberano.">El espectro es territorio soberano.</p>
+        <p class="vehicle-tag" style="color:var(--muted);" data-en="Electronic warfare and resilient communications: sensing, characterising and acting in the electromagnetic spectrum, and keeping communications up when the adversary tries to cut them — without permission from anyone else." data-de="Elektronische Kampfführung und resiliente Kommunikation: das elektromagnetische Spektrum erfassen, charakterisieren und darin handeln – und die Kommunikation aufrechterhalten, wenn der Gegner sie zu kappen versucht. Ohne Erlaubnis von irgendwem." data-es="Guerra electrónica y comunicaciones resilientes: sentir, caracterizar y actuar en el espectro electromagnético, y mantener las comunicaciones cuando el adversario intenta cortarlas — sin permiso de nadie más.">Guerra electrónica y comunicaciones resilientes: sentir, caracterizar y actuar en el espectro electromagnético, y mantener las comunicaciones cuando el adversario intenta cortarlas — sin permiso de nadie más.</p>
       </article>
       <article class="vehicle-card" style="border-right-color:var(--line);border-bottom-color:var(--line);">
         <p class="vehicle-num" style="color:var(--serene-strong);">02</p>
-        <h3 class="vehicle-name" style="color:var(--ink);" data-en="Missions" data-de="Missionen" data-es="Misiones">Misiones</h3>
-        <p class="vehicle-tag" style="color:var(--muted);" data-en="Where ventures coordinate. Two to four companies inside the same sovereign capability, sharing customers, stack and horizon. Spectrum, Autonomy, Compute." data-de="Wo Ventures sich koordinieren. Zwei bis vier Unternehmen innerhalb derselben souveränen Fähigkeit, die Kunden, Stack und Horizont teilen. Spectrum, Autonomy, Compute." data-es="Donde se coordinan las ventures. Dos a cuatro empresas dentro de la misma capacidad soberana, compartiendo clientes, stack y horizonte. Tres misiones: Spectrum, Autonomy y Compute.">Donde se coordinan las ventures. Dos a cuatro empresas dentro de la misma capacidad soberana, compartiendo clientes, stack y horizonte. Tres misiones: Spectrum, Autonomy y Compute.</p>
+        <h3 class="vehicle-name" style="color:var(--ink);">Trusted Autonomy</h3>
+        <p class="vehicle-tag" style="color:var(--ink);font-weight:500;margin-bottom:12px;" data-en="Autonomy under European command." data-de="Autonomie unter europäischem Kommando." data-es="Autonomía bajo mando europeo.">Autonomía bajo mando europeo.</p>
+        <p class="vehicle-tag" style="color:var(--muted);" data-en="The complete autonomy stack, civil or military, on three levels: decisions about the world; the mission system that collects, fuses and distributes the data; and the flight and formation of each platform. A shared synthetic bench is used to develop and validate them." data-de="Der vollständige Autonomie-Stack, zivil oder militärisch, auf drei Ebenen: die Entscheidung über die Lage, das Missionssystem, das die Daten erfasst, fusioniert und verteilt, sowie Flug und Formation jeder Plattform. Eine gemeinsame synthetische Testumgebung dient ihrer Entwicklung und Validierung." data-es="El stack completo de autonomía, civil o militar, en tres niveles: la decisión sobre el mundo, el sistema de misión que recoge, fusiona y reparte los datos, y el vuelo y la formación de cada plataforma. Un banco sintético común los desarrolla y los valida.">El stack completo de autonomía, civil o militar, en tres niveles: la decisión sobre el mundo, el sistema de misión que recoge, fusiona y reparte los datos, y el vuelo y la formación de cada plataforma. Un banco sintético común los desarrolla y los valida.</p>
       </article>
       <article class="vehicle-card" style="border-right-color:var(--line);border-bottom-color:var(--line);">
         <p class="vehicle-num" style="color:var(--serene-strong);">03</p>
-        <h3 class="vehicle-name" style="color:var(--ink);" data-en="Funds" data-de="Fonds" data-es="Fondos">Fondos</h3>
-        <p class="vehicle-tag" style="color:var(--muted);" data-en="Where growth gets backed. A regulated European fund that capitalises sovereign-capability companies — ours and others' — at growth stage. Independent mandate." data-de="Wo Wachstum finanziert wird. Ein regulierter europäischer Fonds, der Unternehmen souveräner Fähigkeiten – eigene wie fremde – in der Wachstumsphase kapitalisiert. Unabhängiges Mandat." data-es="Donde el crecimiento se respalda. Un fondo europeo regulado que capitaliza empresas de capacidad soberana — propias y ajenas — en su etapa de crecimiento. Mandato independiente.">Donde el crecimiento se respalda. Un fondo europeo regulado que capitaliza empresas de capacidad soberana — propias y ajenas — en su etapa de crecimiento. Mandato independiente.</p>
+        <h3 class="vehicle-name" style="color:var(--ink);">Sovereign Compute</h3>
+        <p class="vehicle-tag" style="color:var(--ink);font-weight:500;margin-bottom:12px;" data-en="Compute Europe controls, end to end." data-de="Rechenleistung, die Europa kontrolliert – durchgängig." data-es="Cómputo que Europa controla, de extremo a extremo.">Cómputo que Europa controla, de extremo a extremo.</p>
+        <p class="vehicle-tag" style="color:var(--muted);" data-en="Computers, chips and FPGAs: the silicon and compute that critical systems run on, with security inside the chip itself, designed in Europe and beyond the reach of any foreign jurisdiction." data-de="Computer, Chips und FPGAs: das Silizium und die Rechenleistung, auf denen kritische Systeme laufen, mit der Sicherheit im Chip selbst, in Europa entworfen und außerhalb der Reichweite jeder fremden Jurisdiktion." data-es="Computadores, chips y FPGAs: el silicio y el cómputo sobre los que corren los sistemas críticos, con la seguridad dentro del propio chip, diseñados en Europa y fuera del alcance de cualquier jurisdicción foránea.">Computadores, chips y FPGAs: el silicio y el cómputo sobre los que corren los sistemas críticos, con la seguridad dentro del propio chip, diseñados en Europa y fuera del alcance de cualquier jurisdicción foránea.</p>
       </article>
     </div>
   </div>
@@ -224,7 +233,7 @@
         <a href="contact.html" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
       </nav>
     </div>
-    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I and Prometeo I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-de="Arquetipo Studio SL ist derzeit nicht als regulierter Fondsverwalter tätig. Marte I und Prometeo I werden von einem von der CNMV zugelassenen Unternehmen (in Gründung) verwaltet und ausschließlich an qualifizierte Anleger im Einklang mit der AIFMD und dem spanischen Recht vertrieben." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
+    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-de="Arquetipo Studio SL ist derzeit nicht als regulierter Fondsverwalter tätig. Marte I wird von einem von der CNMV zugelassenen Unternehmen (in Gründung) verwaltet und ausschließlich an qualifizierte Anleger im Einklang mit der AIFMD und dem spanischen Recht vertrieben." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I será gestionado por una entidad autorizada por la CNMV (en formación) y distribuido únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I será gestionado por una entidad autorizada por la CNMV (en formación) y distribuido únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
     <div class="foot-legal-links">
       <a href="legal.html#aviso" data-en="Legal notice" data-es="Aviso legal" data-de="Impressum">Aviso legal</a>
       <a href="legal.html#privacidad" data-en="Privacy policy" data-es="Política de privacidad" data-de="Datenschutz">Política de privacidad</a>
@@ -237,6 +246,23 @@
   </div>
 </footer>
 
+<script>
+/* Intro: fade and lift the wordmark as the page scrolls; reveal the nav once past it */
+(function(){
+  var mark=document.querySelector('.intro-mark'), cue=document.querySelector('.intro-cue'); if(!mark) return;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches, ticking=false;
+  function update(){
+    var h=window.innerHeight, y=window.scrollY, p=Math.min(1,Math.max(0,y/(h*0.6)));
+    mark.style.opacity=String(1-p);
+    if(cue) cue.style.opacity=String(Math.max(0,1-p*2));
+    if(!still) mark.style.transform='translateY('+(-p*48)+'px) scale('+(1+p*0.05)+')';
+    document.body.classList.toggle('intro-active', y<h*0.4);
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(update);} },{passive:true});
+  window.addEventListener('resize',update); update();
+})();
+</script>
 <script src="arquetipo.js"></script>
 <script src="tweaks.js"></script>
 <div class="lang-fixed"><div class="lang" aria-label="Language"><button data-lang="es" class="active">ES</button><span aria-hidden>·</span><button data-lang="en">EN</button><span aria-hidden>·</span><button data-lang="de">DE</button></div></div>

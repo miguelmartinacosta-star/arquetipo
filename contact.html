@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="arquetipo.css" />
+<link rel="stylesheet" href="arquetipo.css?v=2026-09" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -60,6 +60,7 @@
   .contact-aside .hq .hq-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 8px;}
   /* Offices map */
   .sedes-map{position:relative;width:100%;aspect-ratio:16/8;min-height:360px;border:1px solid var(--line-dk);background:#11171c;overflow:hidden;isolation:isolate;z-index:0;}
+  .sedes-map .leaflet-tile-pane{filter:grayscale(1) invert(1) brightness(.78) contrast(1.15);}
   .sedes-map .leaflet-container{width:100%;height:100%;background:#11171c;font-family:var(--body);}
   .sedes-map::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:500;box-shadow:inset 0 0 120px 10px rgba(10,12,14,.55);}
   .leaflet-control-attribution{background:rgba(10,12,14,.6)!important;color:var(--faint)!important;font-size:9px!important;}
@@ -77,6 +78,7 @@
   .leaflet-popup-tip{background:#1A1A1A;border:1px solid rgba(168,187,201,.32);}
   .leaflet-popup-close-button{color:var(--serene)!important;padding:8px 8px 0 0!important;}
   .leaflet-popup-close-button:hover{color:var(--bg)!important;}
+  .sede-pop__credit{margin:4px 10px 0;font-size:9px;letter-spacing:.04em;color:#8a97a2;}
   .sede-pop__img{height:120px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.04);border-bottom:1px solid rgba(168,187,201,.28);}
   .sede-pop__body{padding:16px 18px 17px;}
   .sede-pop__kind{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--serene);margin:0 0 7px;}
@@ -188,27 +190,31 @@
 
     <div class="offices-grid offices-grid--contact reveal" style="border-top-color:var(--line-dk);border-left-color:var(--line-dk);">
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-madrid.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);" data-en="Headquarters · Studio" data-de="Hauptsitz · Studio" data-es="Sede · Studio">Sede · Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Madrid</h3>
         <div class="office-addr-lines" style="margin-bottom:20px;">
           <p class="ln"><b data-en="Headquarters" data-de="Hauptsitz" data-es="Sede">Sede</b><span>Calle Duque de Sesto, 42</span></p>
-          <p class="ln"><b>Studio</b><span>Paseo de la Castellana, 93</span></p>
         </div>
         <p class="office-tagline" style="color:var(--bg);" data-en="Studio direction, board and Public Affairs." data-de="Studio-Leitung, Vorstand und Public Affairs." data-es="Dirección del Studio, consejo y Asuntos Públicos.">Dirección del Studio, consejo y Asuntos Públicos.</p>
       </article>
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-bilbao.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Bilbao</h3>
-        <p class="office-address" style="color:var(--serene);">Bizkaia Accelerator Tower</p>
+        <p class="office-address" style="color:var(--serene);">BAT · Torre Bizkaia</p>
         <p class="office-tagline" style="color:var(--bg);" data-en="Foral R&amp;D entity. Where Studio engineering ships." data-de="Forale F&amp;E-Einheit. Wo die Entwicklung des Studios liefert." data-es="Entidad I+D foral. Donde la ingeniería del Studio entrega.">Entidad I+D foral. Donde la ingeniería del Studio entrega.</p>
       </article>
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-malaga.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Málaga</h3>
         <p class="office-address" style="color:var(--serene);">Paseo del Limonar, 31</p>
-        <p class="office-tagline" style="color:var(--bg);" data-en="Silicon corridor with IMEC and TRADE Málaga." data-de="Silizium-Korridor mit IMEC und TRADE Málaga." data-es="Corredor de silicio con IMEC y TRADE Málaga.">Corredor de silicio con IMEC y TRADE Málaga.</p>
+        <p class="office-tagline" style="color:var(--bg);" data-en="Studio office in Andalusia." data-de="Studio-Standort in Andalusien." data-es="Sede del Studio en Andalucía.">Sede del Studio en Andalucía.</p>
       </article>
       <article class="office-card office-card--future" style="background:rgba(168,187,201,.05);border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-munich.jpg)"></div>
+        <p class="office-photo-credit">Foto: Stefan Kühn · CC BY-SA 3.0</p>
         <p class="office-kind" style="color:var(--serene-strong);" data-en="Opening H2 2027" data-de="Eröffnung H2 2027" data-es="Apertura H2 2027">Apertura H2 2027</p>
         <h3 class="office-city" style="color:var(--serene);">Múnich</h3>
         <p class="office-address" style="color:var(--serene-strong);">Bayern, Deutschland</p>
@@ -233,7 +239,7 @@
         <a href="contact.html" data-en="Contact" data-es="Contacto" data-de="Kontakt">Contacto</a>
       </nav>
     </div>
-    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I and Prometeo I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-de="Arquetipo Studio SL ist derzeit nicht als regulierter Fondsverwalter tätig. Marte I und Prometeo I werden von einem von der CNMV zugelassenen Unternehmen (in Gründung) verwaltet und ausschließlich an qualifizierte Anleger im Einklang mit der AIFMD und dem spanischen Recht vertrieben." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I y Prometeo I serán gestionados por una entidad autorizada por la CNMV (en formación) y distribuidos únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
+    <p class="foot-reg" data-en="Arquetipo Studio SL does not currently act as a regulated fund manager. Marte I will be managed by a CNMV-authorised entity (in formation) and distributed only to eligible investors in accordance with AIFMD and Spanish law." data-de="Arquetipo Studio SL ist derzeit nicht als regulierter Fondsverwalter tätig. Marte I wird von einem von der CNMV zugelassenen Unternehmen (in Gründung) verwaltet und ausschließlich an qualifizierte Anleger im Einklang mit der AIFMD und dem spanischen Recht vertrieben." data-es="Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I será gestionado por una entidad autorizada por la CNMV (en formación) y distribuido únicamente a inversores elegibles conforme a la AIFMD y la ley española.">Arquetipo Studio SL no actúa actualmente como gestora regulada. Marte I será gestionado por una entidad autorizada por la CNMV (en formación) y distribuido únicamente a inversores elegibles conforme a la AIFMD y la ley española.</p>
     <div class="foot-legal-links">
       <a href="legal.html#aviso" data-en="Legal notice" data-es="Aviso legal" data-de="Impressum">Aviso legal</a>
       <a href="legal.html#privacidad" data-en="Privacy policy" data-es="Política de privacidad" data-de="Datenschutz">Política de privacidad</a>
@@ -251,27 +257,24 @@
   function lang(){ return localStorage.getItem("arq-lang") || "es"; }
   function t(o){ return o[lang()] || o.en; }
   var offices = [
-    { city:"Madrid", coord:[40.4239,-3.6766], future:false, img:"https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=560&q=72&sat=-100",
+    { city:"Madrid", coord:[40.4239,-3.6766], future:false, img:"img/site-madrid.jpg",
       kind:{en:"Headquarters",es:"Sede",de:"Hauptsitz"}, addr:"Calle Duque de Sesto, 42",
       tag:{en:"Studio direction and Public Affairs.",es:"Dirección del Studio y Asuntos Públicos.",de:"Studio-Leitung und Public Affairs."} },
-    { city:"Bilbao", coord:[43.2630,-2.9350], future:false, img:"https://images.unsplash.com/photo-1558370781-d6196949e317?auto=format&fit=crop&w=560&q=72&sat=-100",
-      kind:{en:"Studio",es:"Studio",de:"Studio"}, addr:"Bizkaia Accelerator Tower",
+    { city:"Bilbao", coord:[43.2628,-2.9254], future:false, img:"img/site-bilbao.jpg",
+      kind:{en:"Studio",es:"Studio",de:"Studio"}, addr:"BAT · Torre Bizkaia",
       tag:{en:"Foral R&D entity. Where Studio engineering ships.",es:"Entidad I+D foral. Donde la ingeniería del Studio entrega.",de:"Forale F&E-Einheit. Wo die Entwicklung des Studios liefert."} },
-    { city:"Madrid", coord:[40.4486,-3.6919], future:false, img:"https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=560&q=72&sat=-100",
-      kind:{en:"Studio",es:"Studio",de:"Studio"}, addr:"Paseo de la Castellana, 93",
-      tag:{en:"Institutional partners, board, investor briefings.",es:"Socios institucionales, consejo, briefings con inversores.",de:"Institutionelle Partner, Vorstand, Investoren-Briefings."} },
-    { city:"Málaga", coord:[36.7185,-4.3936], future:false, img:"https://images.unsplash.com/photo-1595867818082-083862f3d630?auto=format&fit=crop&w=560&q=72&sat=-100",
+    { city:"Málaga", coord:[36.7185,-4.3936], future:false, img:"img/site-malaga.jpg",
       kind:{en:"Studio",es:"Studio",de:"Studio"}, addr:"Paseo del Limonar, 31",
-      tag:{en:"Silicon corridor with IMEC and TRADE Málaga.",es:"Corredor de silicio con IMEC y TRADE Málaga.",de:"Silizium-Korridor mit IMEC und TRADE Málaga."} },
-    { city:"Múnich", coord:[48.1351,11.5820], future:true, img:"https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=560&q=72&sat=-100",
+      tag:{en:"Studio office in Andalusia.",es:"Sede del Studio en Andalucía.",de:"Studio-Standort in Andalusien."} },
+    { city:"Múnich", coord:[48.1351,11.5820], future:true, img:"img/site-munich.jpg", credit:"Foto: Stefan Kühn · CC BY-SA 3.0",
       kind:{en:"Opening H2 2027",es:"Apertura H2 2027",de:"Eröffnung H2 2027"}, addr:"Bayern, Deutschland",
       tag:{en:"German node. European jurisdiction beyond Spain.",es:"Nodo alemán. Jurisdicción europea más allá de España.",de:"Deutscher Standort. Europäische Jurisdiktion über Spanien hinaus."} }
   ];
   function build(el){
     var map = L.map(el, { scrollWheelZoom:false, zoomControl:true, attributionControl:true, zoomSnap:0.25 });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      subdomains:"abcd", maxZoom:19,
-      attribution:'&copy; OpenStreetMap &copy; CARTO'
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     map.attributionControl.setPrefix(false);
     var cluster = L.markerClusterGroup({
@@ -294,6 +297,7 @@
         : "https://www.google.com/maps/search/?api=1&query=" + o.coord[0] + "%2C" + o.coord[1];
       var html = '<div class="sede-pop">'
         + '<div class="sede-pop__img" style="background-image:url(\''+o.img+'\')"></div>'
+        + (o.credit ? '<p class="sede-pop__credit">'+o.credit+'</p>' : '')
         + '<div class="sede-pop__body">'
         + '<p class="sede-pop__kind" data-en="'+o.kind.en+'" data-es="'+o.kind.es+'" data-de="'+o.kind.de+'">'+t(o.kind)+'</p>'
         + '<h4 class="sede-pop__city">'+o.city+'</h4>'
