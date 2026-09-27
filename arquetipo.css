@@ -568,3 +568,17 @@ footer{background:var(--slate);color:var(--bg);padding:64px 0 32px;position:rela
 .adv-counsel>span:first-child{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--serene-strong);}
 @media(max-width:900px){.adv-list{grid-template-columns:1fr;}}
 @media(max-width:520px){.adv-row{grid-template-columns:1fr;}.adv-area{grid-row:auto;}}
+/* News article pages — news-*.html (Sept 2026). Post layout mirrors post-arquetipo.html's inline rules. */
+.post{max-width:780px;margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.post-sec{padding:clamp(30px,4vw,46px) 0;border-top:1px solid var(--line);}
+.post-sec:first-of-type{border-top:none;}
+.post-k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--serene-strong);margin:0 0 16px;}
+.post-h{font-family:var(--display);font-weight:500;font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.014em;color:var(--ink);margin:0 0 16px;max-width:24ch;}
+.post-p{font-size:18px;line-height:1.7;color:var(--muted);margin:0 0 18px;}
+.post-p:last-child{margin-bottom:0;}
+.post-crumb a{color:inherit;border-bottom:1px solid transparent;transition:border-color .2s;}
+.post-crumb a:hover{border-bottom-color:currentColor;}
+.post-links{display:flex;flex-wrap:wrap;gap:16px 36px;}
+.btn-link--back::after{content:none;}
+.btn-link--back::before{content:"←";transition:transform .2s;}
+.btn-link--back:hover::before{transform:translateX(-5px);}
