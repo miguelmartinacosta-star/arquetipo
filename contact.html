@@ -60,6 +60,7 @@
   .contact-aside .hq .hq-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin:0 0 8px;}
   /* Offices map */
   .sedes-map{position:relative;width:100%;aspect-ratio:16/8;min-height:360px;border:1px solid var(--line-dk);background:#11171c;overflow:hidden;isolation:isolate;z-index:0;}
+  .sedes-map .leaflet-tile-pane{filter:grayscale(1) invert(1) brightness(.78) contrast(1.15);}
   .sedes-map .leaflet-container{width:100%;height:100%;background:#11171c;font-family:var(--body);}
   .sedes-map::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:500;box-shadow:inset 0 0 120px 10px rgba(10,12,14,.55);}
   .leaflet-control-attribution{background:rgba(10,12,14,.6)!important;color:var(--faint)!important;font-size:9px!important;}
@@ -189,6 +190,7 @@
 
     <div class="offices-grid offices-grid--contact reveal" style="border-top-color:var(--line-dk);border-left-color:var(--line-dk);">
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-madrid.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);" data-en="Headquarters · Studio" data-de="Hauptsitz · Studio" data-es="Sede · Studio">Sede · Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Madrid</h3>
         <div class="office-addr-lines" style="margin-bottom:20px;">
@@ -197,18 +199,22 @@
         <p class="office-tagline" style="color:var(--bg);" data-en="Studio direction, board and Public Affairs." data-de="Studio-Leitung, Vorstand und Public Affairs." data-es="Dirección del Studio, consejo y Asuntos Públicos.">Dirección del Studio, consejo y Asuntos Públicos.</p>
       </article>
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-bilbao.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Bilbao</h3>
         <p class="office-address" style="color:var(--serene);">BAT · Torre Bizkaia</p>
         <p class="office-tagline" style="color:var(--bg);" data-en="Foral R&amp;D entity. Where Studio engineering ships." data-de="Forale F&amp;E-Einheit. Wo die Entwicklung des Studios liefert." data-es="Entidad I+D foral. Donde la ingeniería del Studio entrega.">Entidad I+D foral. Donde la ingeniería del Studio entrega.</p>
       </article>
       <article class="office-card" style="background:transparent;border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-malaga.jpg)"></div>
         <p class="office-kind" style="color:var(--serene-strong);">Studio</p>
         <h3 class="office-city" style="color:var(--bg);">Málaga</h3>
         <p class="office-address" style="color:var(--serene);">Paseo del Limonar, 31</p>
         <p class="office-tagline" style="color:var(--bg);" data-en="Studio office in Andalusia." data-de="Studio-Standort in Andalusien." data-es="Sede del Studio en Andalucía.">Sede del Studio en Andalucía.</p>
       </article>
       <article class="office-card office-card--future" style="background:rgba(168,187,201,.05);border-right-color:var(--line-dk);border-bottom-color:var(--line-dk);">
+        <div class="office-photo" style="background-image:url(img/site-munich.jpg)"></div>
+        <p class="office-photo-credit">Foto: Stefan Kühn · CC BY-SA 3.0</p>
         <p class="office-kind" style="color:var(--serene-strong);" data-en="Opening H2 2027" data-de="Eröffnung H2 2027" data-es="Apertura H2 2027">Apertura H2 2027</p>
         <h3 class="office-city" style="color:var(--serene);">Múnich</h3>
         <p class="office-address" style="color:var(--serene-strong);">Bayern, Deutschland</p>
@@ -266,9 +272,9 @@
   ];
   function build(el){
     var map = L.map(el, { scrollWheelZoom:false, zoomControl:true, attributionControl:true, zoomSnap:0.25 });
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-      subdomains:"abcd", maxZoom:19,
-      attribution:'&copy; OpenStreetMap &copy; CARTO'
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     map.attributionControl.setPrefix(false);
     var cluster = L.markerClusterGroup({
