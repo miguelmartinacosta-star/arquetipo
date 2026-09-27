@@ -584,4 +584,4 @@ footer{background:var(--slate);color:var(--bg);padding:64px 0 32px;position:rela
 .btn-link--back:hover::before{transform:translateX(-5px);}
 /* Portfolio — platform screenshot, full width and in colour (Sept 2026) */
 .vplatform{margin:0 0 14px;border:1px solid var(--line);background:#0c0f12;}
-.vplatform img{display:block;width:100%;height:auto;}
+.vplatform img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.05);}
