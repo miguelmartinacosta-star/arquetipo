@@ -582,3 +582,7 @@ footer{background:var(--slate);color:var(--bg);padding:64px 0 32px;position:rela
 .btn-link--back::after{content:none;}
 .btn-link--back::before{content:"←";transition:transform .2s;}
 .btn-link--back:hover::before{transform:translateX(-5px);}
+/* Portfolio — platform screenshot, full width and in colour (Sept 2026) */
+.vplatform{margin:0 0 14px;border:1px solid var(--line);background:#0c0f12;}
+.vplatform img{display:block;width:100%;height:auto;}
+.vplatform figcaption{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:10px 12px;background:var(--bg);border-top:1px solid var(--line);}
