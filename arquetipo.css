@@ -588,4 +588,6 @@ footer{background:var(--slate);color:var(--bg);padding:64px 0 32px;position:rela
 /* Contact — real office photo on each card (Sept 2026) */
 .office-photo{aspect-ratio:4/3;margin:calc(-1*clamp(28px,3.5vw,48px)) calc(-1*clamp(28px,3.5vw,48px)) 22px;background-size:cover;background-position:center;filter:grayscale(1) contrast(1.04);}
 .office-photo-credit{margin:-16px 0 16px;font-size:10px;letter-spacing:.04em;color:var(--faint);}
-.formation-grid--auto{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.formation-grid--auto{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.formation-grid--auto{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.formation-grid--auto{grid-template-columns:1fr;}}
