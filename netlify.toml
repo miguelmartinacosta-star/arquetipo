@@ -9,3 +9,30 @@
 # verbatim, exactly like the source — matching GitHub Pages behaviour.
 [build.processing]
   skip_processing = true
+
+# /stic live vote: phone page at /stic/ (static), API at /stic/api/* (netlify/functions/stic-api.mjs,
+# storage in Netlify Blobs). The repo root is published as-is, so never serve the function source,
+# the package files or node_modules as static files.
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/node_modules/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package-lock.json"
+  to = "/404.html"
+  status = 404
+  force = true

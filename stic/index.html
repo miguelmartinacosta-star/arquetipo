@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votación · Jornadas STIC</title>
+<style>
+  :root { --carbon:#081321; --graphite:#0E1B2D; --steel:#1E314B; --electric:#E2E8F0; --cold:#94A3B8; --accent:#22D3EE; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; background: radial-gradient(circle at center,#0B192C 0%,#081321 100%); color:var(--electric);
+         font: 16px/1.5 -apple-system, system-ui, 'Inter', sans-serif; padding: 24px 16px; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  p { color: var(--cold); margin: 0 0 20px; }
+  .opts { display:grid; gap:14px; }
+  button { font-family: inherit; font-weight: 800; font-size: 30px; line-height: 1; padding: 26px; border-radius: 14px; border: 1px solid var(--steel);
+           background: var(--graphite); color: var(--electric); cursor: pointer; }
+  button.on { border-color: var(--accent); background: rgba(34,211,238,.15); color: var(--accent); }
+  .msg { margin-top: 20px; color: var(--cold); min-height: 3em; }
+  .src { margin-top: 24px; font-size: 14px; } .src a { color: var(--accent); word-break: break-all; }
+  footer { margin-top: 28px; font-size: 12px; color: #64748B; }
+</style>
+</head>
+<body>
+<h1>Una de las tres alertas es falsa. ¿Cuál?</h1>
+<p>Mira las alertas en la pantalla de la sala y vota.</p>
+<div class="opts">
+  <button data-c="A">A</button>
+  <button data-c="B">B</button>
+  <button data-c="C">C</button>
+</div>
+<div class="msg" id="msg"></div>
+<div class="src" id="src" hidden></div>
+<footer>No pide datos. Solo guarda tu voto (la letra y la hora), sin nada que te identifique. Puedes cambiarlo mientras la votación esté abierta.</footer>
+<script>
+  // Same page for arquetipo.com/stic/ (Netlify Functions) and the laptop fallback (vote-server.mjs serves /api/*).
+  // The answer is not in this page: it arrives from the server only once the presenter shows the sources.
+  const API = location.pathname.startsWith('/stic') ? '/stic/api/' : '/api/';
+  let token = null;
+  try { token = localStorage.getItem('stic-token'); } catch (e) {}
+  if (!token) { token = Math.random().toString(36).slice(2) + Date.now().toString(36); try { localStorage.setItem('stic-token', token); } catch (e) {} }
+  const msg = document.getElementById('msg');
+  let mine = null; try { mine = localStorage.getItem('stic-vote'); } catch (e) {}
+  const mark = () => document.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === mine));
+  mark(); if (mine) msg.textContent = 'Has votado ' + mine + '.';
+  document.querySelectorAll('button').forEach(b => b.onclick = async () => {
+    try {
+      const r = await fetch(API + 'vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ c: b.dataset.c, token }) });
+      if (r.status === 409) { msg.textContent = 'La votación está cerrada.'; return; }
+      if (!r.ok) throw new Error(r.status);
+      mine = b.dataset.c; try { localStorage.setItem('stic-vote', mine); } catch (e) {}
+      mark(); msg.textContent = 'Voto registrado: ' + mine + '. Gracias.';
+    } catch (e) { msg.textContent = 'No llega la conexión. Prueba otra vez.'; }
+  });
+  const el = document.getElementById('src');
+  let shown = false;
+  function render(rv) {
+    el.textContent = '';
+    const add = (tag, text) => { const n = document.createElement(tag); n.textContent = text; el.appendChild(n); return n; };
+    if (rv.headline) add('b', rv.headline);
+    for (const l of rv.lines || []) { el.appendChild(document.createElement('br')); el.appendChild(document.createTextNode(l)); }
+    if ((rv.sources || []).length) {
+      el.appendChild(document.createElement('br')); el.appendChild(document.createElement('br'));
+      el.appendChild(document.createTextNode('Fuentes:'));
+      for (const [n, u] of rv.sources) {
+        el.appendChild(document.createElement('br')); el.appendChild(document.createElement('br'));
+        el.appendChild(document.createTextNode(n)); el.appendChild(document.createElement('br'));
+        const a = document.createElement('a'); a.href = /^https:\/\//.test(u) ? u : '#'; a.textContent = u; a.rel = 'noopener'; el.appendChild(a);
+      }
+    }
+    el.hidden = false; shown = true;
+  }
+  async function poll() {
+    try {
+      const s = await (await fetch(API + 'state?lite=1', { cache: 'no-store' })).json();
+      if (s.stage === 'sources' && s.reveal && !shown) render(s.reveal);
+      if (s.stage !== 'sources' && shown) { el.hidden = true; shown = false; }
+    } catch (e) {}
+    setTimeout(poll, 4000);
+  }
+  poll();
+</script>
+</body>
+</html>

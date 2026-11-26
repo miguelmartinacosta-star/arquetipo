@@ -1,0 +1,9 @@
+{
+  "name": "arquetipo-web",
+  "private": true,
+  "description": "Static site. The only dependency is for the /stic live-vote Netlify Function.",
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "11.1.7"
+  }
+}
